@@ -19,7 +19,6 @@
   var rate;
   var totalBilled;
 
-<<<<<<< HEAD
   $("#submit").on("click", function(event) {
   // Prevent form from submitting
   event.preventDefault();
@@ -48,7 +47,6 @@
   console.log(employeeRate);
   console.log(employeeBillable);
 
-=======
     $("#submit").on("click", function(event) {
         // Prevent form from submitting
         event.preventDefault();
@@ -78,4 +76,4 @@
       // console.log(employeeBillable);
 
     });
->>>>>>> 85e6dc4cb0d855f397afd41ad2730b78a5cdbbb5
+
