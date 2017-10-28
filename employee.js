@@ -18,11 +18,30 @@
   var totalMonth;
   var rate;
   var totalBilled;
+  // var employees = []
 
-    database.ref().on("value", function(snapshot) {
+    database.ref().orderByChild('timestamp').startAt(Date.now()).on("child_added", function(snapshot) {
+        console.log(snapshot.val())
 
-      if (snapshot.child("employeeName").exists() && snapshot.child("employeeRole").exists()) {
+      if (snapshot.child("employeeName").exists() && snapshot.child("employeeRole").exists()
+      && snapshot.child("employeeDate").exists() && snapshot.child("employeeRate").exists()) {
+        name = snapshot.val().employeeName;
+        role = snapshot.val().employeeRole;
+        date = snapshot.val().employeeDate;
+        rate = snapshot.val().employeeRate;
+    
+      var rows = "";
+
+        $.each(snapshot.val(), function(){
+          console.log(this)
+          rows = "<tr><td>" + name + "</td><td>" + role + "</td><td>"
+           + date + "</td><td>" + this.employeeMonth + "</td></td>" + rate
+           + "</td></tr>" + this.employeeBillable;
+        });
+
+        $("#ce").append(rows);
     }
+});
 
     $("#submit").on("click", function(event) {
         // Prevent form from submitting
@@ -37,19 +56,20 @@
         rate = $("#employee-rate").val();
         // totalBilled = $("#employee-rate").val();
 
-        database.ref().set({
-          employeeName: name,
-          employeeRole: role,
-          employeeDate: date,
-          // employeeMonth: totalMonth,
-          employeeRate: rate,
-          // employeeBillable: totalBilled,
-        });
-      console.log(database.employeeName);
-      console.log(database.employeeRole);
-      console.log(database.employeeDate);
+            database.ref().push({
+              employeeName: name,
+              employeeRole: role,
+              employeeDate: date,
+              // employeeMonth: totalMonth,
+              employeeRate: rate,
+              timestamp: firebase.database.ServerValue.TIMESTAMP
+              // employeeBillable: totalBilled,
+            });
+      console.log(name);
+      console.log(role);
+      console.log(date);
       // console.log(employeeMonth);
-      console.log(database.employeeRate);
+      console.log(rate);
       // console.log(employeeBillable);
 
-    });
+    })
