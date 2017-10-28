@@ -47,4 +47,3 @@
   console.log(employeeRate);
   console.log(employeeBillable);
 
-}
