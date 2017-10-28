@@ -13,6 +13,7 @@
 	<title>Employee Data Management</title>
 </head>
 <body>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
   <div class="container">
 	<div class="jumbotron">
 	  <h1 class="display-3">Employee Data Management</h1>
@@ -32,7 +33,7 @@
                 </tr>
             </table>
     </div>
-    <div class="container" id="topArticles">
+    <div class="container" id="addEmployee">
         <h2 id="ta">Add Employee</h2>
 
         <div id="wellSection">
@@ -52,7 +53,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="form_email">Role*</label>
-                    <input id="form_role" type="text" name="email" class="form-control" placeholder="Administrator" required="required" data-error="Valid email is required.">
+                    <input id="form_role" type="text" name="email" class="form-control" placeholder="Administrator" required="required" data-error="Valid role is required.">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>
