@@ -19,6 +19,11 @@
   var rate;
   var totalBilled;
 
+    database.ref().on("value", function(snapshot) {
+
+      if (snapshot.child("employeeName").exists() && snapshot.child("employeeRole").exists()) {
+    }
+
     $("#submit").on("click", function(event) {
         // Prevent form from submitting
         event.preventDefault();
