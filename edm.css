@@ -7,6 +7,7 @@
 #ce {
 	width: 99%;
 	border-bottom-style: solid;
+	border-bottom-width: 1px;
 	border-color: #a9a9a9;
 	border-collapse: separate;
 	border-spacing: 20px;
@@ -53,7 +54,7 @@ th {
 	background-color: #000080;
 }
 
-#topArticles {
+#addEmplyee {
 	border-radius: 10px;
 	padding:0;
 	border-style: solid;
