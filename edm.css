@@ -5,11 +5,16 @@
 }
 
 #ce {
-	border-style: solid;
-	border-bottom: 1px;
+	width: 99%;
+	border-bottom-style: solid;
 	border-color: #a9a9a9;
 	border-collapse: separate;
 	border-spacing: 20px;
+	margin: 5px;
+}
+
+th {
+	height:50px;
 }
 
 #sp {
