@@ -43,6 +43,34 @@
     }
 });
 
+  $("#submit").on("click", function(event) {
+  // Prevent form from submitting
+  event.preventDefault();
+
+  // Input Variables
+
+  name = $("#employee-name").val();
+  role = $("#employee-role").val();
+  date = $("#employee-date").val();
+  // totalMonth = $("#employee-totalMonth").val();
+  rate = $("#employee-rate").val();
+  // totalBilled = $("#employee-rate").val();
+
+  database.ref().set({
+    employeeName: name,
+    employeeRole: role,
+    employeeDate: date,
+    employeeMonth: totalMonth,
+    employeeRate: rate,
+    employeeBillable: totalBilled,
+  })
+  console.log(employeeName);
+  console.log(employeeRole);
+  console.log(employeeDate);
+  console.log(employeeMonth);
+  console.log(employeeRate);
+  console.log(employeeBillable);
+
     $("#submit").on("click", function(event) {
         // Prevent form from submitting
         event.preventDefault();
@@ -72,4 +100,7 @@
       console.log(rate);
       // console.log(employeeBillable);
 
-    })
+
+    });
+
+
