@@ -28,9 +28,9 @@
   name = $("#employee-name").val();
   role = $("#employee-role").val();
   date = $("#employee-date").val();
-  totalMonth = $("#employee-totalMonth").val();
+  // totalMonth = $("#employee-totalMonth").val();
   rate = $("#employee-rate").val();
-  totalBilled = $("#employee-rate").val();
+  // totalBilled = $("#employee-rate").val();
 
   database.ref().set({
     employeeName: name,
