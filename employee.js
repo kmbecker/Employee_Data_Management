@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+  
 
 
   // Initialize Firebase
@@ -60,16 +62,16 @@
     employeeName: name,
     employeeRole: role,
     employeeDate: date,
-    employeeMonth: totalMonth,
+    // employeeMonth: totalMonth,
     employeeRate: rate,
-    employeeBillable: totalBilled,
+    // employeeBillable: totalBilled,
   })
-  console.log(employeeName);
-  console.log(employeeRole);
-  console.log(employeeDate);
-  console.log(employeeMonth);
-  console.log(employeeRate);
-  console.log(employeeBillable);
+  // console.log(employeeName);
+  // console.log(employeeRole);
+  // console.log(employeeDate);
+  // console.log(employeeMonth);
+  // console.log(employeeRate);
+  // console.log(employeeBillable);
 
     $("#submit").on("click", function(event) {
         // Prevent form from submitting
@@ -103,4 +105,7 @@
 
     });
 
+
+  });
+})
 
